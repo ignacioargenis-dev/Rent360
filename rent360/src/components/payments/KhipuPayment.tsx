@@ -120,7 +120,7 @@ export default function KhipuPayment({
       onStatusChange?.(data.status)
       
       // Iniciar polling para verificar el estado
-      startPolling(data.payment_id)
+      startPolling(data.khipu_payment_id || data.payment_id)
 
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Error desconocido'
